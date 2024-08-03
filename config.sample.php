@@ -13,5 +13,6 @@ return [
     'region' => 'us-east-1',
     'bucket'=>'you-bucket-name',
     'expiration'=>3,
-	//'endpoint' => 'https://sfo2.digitaloceanspaces.com', //enable this for digitalocean space	
+	  'endpoint' => 'https://sfo2.digitaloceanspaces.com', 
+     'ftp_path' => 'example-patch',
 ];
