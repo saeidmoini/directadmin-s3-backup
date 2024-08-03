@@ -1,6 +1,6 @@
 # directadmin-s3-backup
 
-DirectAdmin S3 Backup
+DirectAdmin S3 Backup based on https://github.com/powerkernel/directadmin-s3-backup
 
 ## Features
 
@@ -10,7 +10,7 @@ DirectAdmin S3 Backup
 
 ```bash
 mkdir -p /home/admin/tools/
-wget -O /home/admin/tools/s3backup.zip https://github.com/saeidmoini/directadmin-s3-backup/archive/master.zip
+wget -O /home/admin/tools/s3backup.zip https://github.com/saeidmoini/directadmin-s3-backup/archive/pars-pack.zip
 cd /home/admin/tools
 unzip s3backup.zip
 mv directadmin-s3-backup-master directadmin-s3-backup
