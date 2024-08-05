@@ -11,9 +11,12 @@
 
 use Aws\Exception\MultipartUploadException;
 use Aws\S3\MultipartUploader;
+use Aws\S3\MultipartCopy;
+use Aws\S3\S3Client;
 
 require __DIR__ . '/vendor/autoload.php';
 $conf = require __DIR__ . '/config.php';
+
 
 //$date = date('Ymd');
 $bucket = $conf['bucket'];
@@ -33,17 +36,32 @@ if (!empty($conf['endpoint'])) {
     $opts['endpoint'] = $conf['endpoint'];
 }
 
-$client = new Aws\S3\S3Client($opts);
+$s3Client = new Aws\S3\S3Client($opts);
 
-// Upload
-$uploader = new MultipartUploader($client, $ftp_local_file, [
+$source = $ftp_local_file;
+
+$uploader = new MultipartUploader($s3Client, $source, [
     'bucket' => $bucket,
     'key' => $conf['ftp_path']. '/' .date('Y-m-d') . '/' . $ftp_remote_file,
+     
 ]);
 
+//Recover from errors
+do {
+    try {
+        $result = $uploader->upload();
+    } catch (MultipartUploadException $e) {
+        $uploader = new MultipartUploader($s3Client, $source, [
+            'state' => $e->getState(),
+        ]);
+    }
+} while (!isset($result));
+
+//Abort a multipart upload if failed
 try {
     $result = $uploader->upload();
-    echo "Upload complete: {$result['ObjectURL']}\n";
 } catch (MultipartUploadException $e) {
-    echo $e->getMessage() . "\n";
+    // State contains the "Bucket", "Key", and "UploadId"
+    $params = $e->getState()->getId();
+    $result = $s3Client->abortMultipartUpload($params);
 }
