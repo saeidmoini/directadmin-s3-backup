@@ -24,8 +24,6 @@ $ftp_local_file=$argv[1];
 $ftp_remote_file=$argv[2];
 $ftp_path=$argv[3];
 
-
-
 // S3 Client
 $opts = [
     'version' => 'latest',
@@ -37,7 +35,6 @@ $opts = [
 if (!empty($conf['endpoint'])) {
     $opts['endpoint'] = $conf['endpoint'];
 }
-
 
 $s3Client = new Aws\S3\S3Client($opts);
 
