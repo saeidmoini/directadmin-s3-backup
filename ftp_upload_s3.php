@@ -22,6 +22,7 @@ $conf = require __DIR__ . '/config.php';
 $bucket = $conf['bucket'];
 $ftp_local_file=$argv[1];
 $ftp_remote_file=$argv[2];
+$ftp_path=$argv[3];
 
 
 // S3 Client
@@ -42,7 +43,7 @@ $source = $ftp_local_file;
 
 $uploader = new MultipartUploader($s3Client, $source, [
     'bucket' => $bucket,
-    'key' => $conf['ftp_path']. '/' .date('Y-m-d') . '/' . $ftp_remote_file,
+    'key' => $conf['ftp_path']. $ftp_path .date('Y-m-d') . '/' . $ftp_remote_file,
      
 ]);
 

@@ -7,12 +7,12 @@
 
 return [
     'credentials' => [
-        'key' => 'YOUR_AWS_KEY',
-        'secret' => 'YOUR_AWS_SECRET',
+        'key' => 'wYiEiPfLu3Oxrv3k',
+        'secret' => 'PqLZVTK7Seia2aAzqGl5opDfefnGpDDL',
     ],
     'region' => 'us-east-1',
-    'bucket'=>'you-bucket-name',
+    'bucket'=>'c442118',
     'expiration'=>3,
-	  'endpoint' => 'https://sfo2.digitaloceanspaces.com', 
-     'ftp_path' => 'example-patch',
+	  'endpoint' => 'https://c442118.parspack.net', 
+    'ftp_path' => 'sample/',  #Use / at the end
 ];
