@@ -13,7 +13,7 @@ mkdir -p /home/admin/tools/
 wget -O /home/admin/tools/s3backup.zip https://github.com/saeidmoini/directadmin-s3-backup/archive/pars-pack.zip
 cd /home/admin/tools
 unzip s3backup.zip
-mv directadmin-s3-backup-master directadmin-s3-backup
+mv directadmin-s3-backup-pars-pack directadmin-s3-backup
 cd directadmin-s3-backup
 cp config.sample.php config.php
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
