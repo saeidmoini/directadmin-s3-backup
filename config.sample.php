@@ -7,12 +7,11 @@
 
 return [
     'credentials' => [
-        'key' => 'wYiEiPfLu3Oxrv3k',
-        'secret' => 'PqLZVTK7Seia2aAzqGl5opDfefnGpDDL',
+        'key' => 'lTscYUBKOmc9CGtH',
+        'secret' => 'A9v9ZO1X4jTuhhm2Kw28iAiq1AObg59O',
     ],
     'region' => 'us-east-1',
-    'bucket'=>'c442118',
+    'bucket'=>'c884335',
     'expiration'=>3,
-	  'endpoint' => 'https://c442118.parspack.net', 
-    'ftp_path' => 'sample/',  #Use / at the end
+	  'endpoint' => 'https://c884335.parspack.net'
 ];

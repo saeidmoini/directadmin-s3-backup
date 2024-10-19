@@ -42,7 +42,7 @@ $source = $ftp_local_file;
 
 $uploader = new MultipartUploader($s3Client, $source, [
     'bucket' => $bucket,
-    'key' => $conf['ftp_path']. $ftp_path .date('Y-m-d') . '/' . $ftp_remote_file,
+    'key' => $ftp_path .date('Y-m-d') . '/' . $ftp_remote_file,
 
 ]);
 
