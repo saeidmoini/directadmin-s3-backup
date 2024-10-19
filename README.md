@@ -21,8 +21,10 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 php composer.phar update
 mkdir -p /usr/local/directadmin/scripts/custom
-wget -O /usr/local/directadmin/scripts/custom/ftp_upload.php https://raw.githubusercontent.com/powerkernel/directadmin-s3-backup/master/upload-script.sh
+cp -f "/home/admin/tools/directadmin-s3-backup/ftp_upload.php" /usr/local/directadmin/scripts/custom/ftp_upload.php
+cp -f "/home/admin/tools/directadmin-s3-backup/ftp_list.php" /usr/local/directadmin/scripts/custom/ftp_list.php.php
 chmod +x /usr/local/directadmin/scripts/custom/ftp_upload.php
+chmod +x /usr/local/directadmin/scripts/custom/ftp_list.php
 ```
 
 Update `config.php` with your ParsPack access keys and bucket name
