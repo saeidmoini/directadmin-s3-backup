@@ -22,7 +22,7 @@ php -r "unlink('composer-setup.php');"
 php composer.phar update
 mkdir -p /usr/local/directadmin/scripts/custom
 cp -f "/home/admin/tools/directadmin-s3-backup/ftp_upload.php" /usr/local/directadmin/scripts/custom/ftp_upload.php
-cp -f "/home/admin/tools/directadmin-s3-backup/ftp_list.php" /usr/local/directadmin/scripts/custom/ftp_list.php.php
+cp -f "/home/admin/tools/directadmin-s3-backup/ftp_list.php" /usr/local/directadmin/scripts/custom/ftp_list.php
 chmod +x /usr/local/directadmin/scripts/custom/ftp_upload.php
 chmod +x /usr/local/directadmin/scripts/custom/ftp_list.php
 ```
